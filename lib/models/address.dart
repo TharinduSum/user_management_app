@@ -1,3 +1,4 @@
+//handling address data and converting it to/from JSON for API communication.
 class Address {
   final int? id;
   final String addressLineOne;

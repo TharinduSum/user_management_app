@@ -1,3 +1,4 @@
+//managing user data and converting it to/from JSON for API communication.
 import 'address.dart';
 
 class User {
