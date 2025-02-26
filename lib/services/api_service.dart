@@ -10,12 +10,9 @@ class ApiService { //usrReltedApiOprationsHndlCRUD
     final response = await http.get(Uri.parse('$baseUrl/users/'));
 
     if (response.statusCode == 200) {
-      // Parse the response body
       List<dynamic> jsonList = json.decode(response.body);
       return jsonList.map((json) => User.fromJson(json)).toList();
     } else {
-      // If the server did not return a 200 OK response,
-      // throw an exception.
       throw Exception('Failed to load users: ${response.statusCode}');
     }
   }
