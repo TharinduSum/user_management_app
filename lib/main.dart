@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        //defltDesignLngugFrBulApps_ltstVrsinGoglMateDesSystm
+        //defltDesignLngugtoBulApps_ltstVrsinGoglMateDesSystm
         useMaterial3: true,
       ),
       home: UserListScreen(),
