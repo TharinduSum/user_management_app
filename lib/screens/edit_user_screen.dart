@@ -63,7 +63,7 @@ class _EditUserScreenState extends State<EditUserScreen> {
     });
 
     try {
-      // Create address object
+
       final address = Address(
         id: widget.user.address?.id,
         addressLineOne: _addressLine1,
@@ -73,7 +73,7 @@ class _EditUserScreenState extends State<EditUserScreen> {
         userId: widget.user.id,
       );
 
-      // Update user with the address
+
       await _apiService.updateUser(
         widget.user.id,
         firstName: _firstName,
@@ -82,7 +82,7 @@ class _EditUserScreenState extends State<EditUserScreen> {
         address: address,
       );
 
-      // Return to the previous screen with success
+
       Navigator.pop(context, true);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('User updated successfully')),
@@ -119,14 +119,13 @@ class _EditUserScreenState extends State<EditUserScreen> {
                   ),
                 ),
 
-              // User Information Section
+
               Text(
                 'User Information',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 16),
 
-              // Display username (non-editable)
               InputDecorator(
                 decoration: InputDecoration(
                   labelText: 'Username',
