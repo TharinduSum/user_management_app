@@ -4,7 +4,7 @@ import '../models/user.dart';
 import '../models/address.dart';
 
 class ApiService { //usrReltedApiOprationsHndlCRUD
-  final String baseUrl = 'http://10.0.2.2:8000';
+  final String baseUrl = 'http://10.0.2.2:8000';//spcialIPtoAccsLoclHost(127)
 
   Future<List<User>> getAllUsers() async {
     final response = await http.get(Uri.parse('$baseUrl/users/'));
