@@ -204,7 +204,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
               SearchableDropdown(
                 items: CountryData.countries,
                 value: _country.isEmpty ? null : _country,
-                hint: 'Select a country',
+                hint: ' ',
                 label: 'Country',
                 validator: (value) {
                   if (value == null || value!.isEmpty) {
