@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/address.dart';
 import '../services/api_service.dart';
+import '../utils/country_data.dart';
+import '../widgets/searchable_dropdown.dart';
 
 class CreateUserScreen extends StatefulWidget {
   @override
@@ -199,19 +201,24 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
               ),
               SizedBox(height: 16),
 
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Country',
-                  border: OutlineInputBorder(),
-                ),
+              SearchableDropdown(
+                items: CountryData.countries,
+                value: _country.isEmpty ? null : _country,
+                hint: 'Select a country',
+                label: 'Country',
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a country';
+                  if (value == null || value!.isEmpty) {
+                    return 'Please select a country';
                   }
                   return null;
                 },
-                onSaved: (value) => _country = value!,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    _country = newValue!;
+                  });
+                },
               ),
+
               SizedBox(height: 24),
 
               ElevatedButton(
